@@ -1,5 +1,5 @@
 {
-  "originHash" : "2178e038942b1bd0b05fca805444f7588b6a2fd3e7e2ae5c2d849ff20e2f0f51",
+  "originHash" : "61a07d50965aee9a8166cec75c82fa25a964f5b07c01c65d81db8661c7d3ff96",
   "pins" : [
     {
       "identity" : "swift-docc-plugin",
@@ -26,6 +26,33 @@
       "state" : {
         "revision" : "bc386b95f2a16ccd0150a8235e7c69eab2b866ca",
         "version" : "1.8.0"
+      }
+    },
+    {
+      "identity" : "wrkstrmfoundation",
+      "kind" : "remoteSourceControl",
+      "location" : "https://github.com/wrkstrm/WrkstrmFoundation.git",
+      "state" : {
+        "revision" : "05f61caa75f352104054a9a0b6fae798c4034a7e",
+        "version" : "3.0.0"
+      }
+    },
+    {
+      "identity" : "wrkstrmlog",
+      "kind" : "remoteSourceControl",
+      "location" : "https://github.com/wrkstrm/WrkstrmLog.git",
+      "state" : {
+        "revision" : "f03a3f99c477e3c5c62d96f2833c2ac171390c59",
+        "version" : "2.2.4"
+      }
+    },
+    {
+      "identity" : "wrkstrmmain",
+      "kind" : "remoteSourceControl",
+      "location" : "https://github.com/wrkstrm/WrkstrmMain.git",
+      "state" : {
+        "revision" : "c2e57bd3f0f5e4ce720d5a92a0126e9b1d6750e1",
+        "version" : "2.5.0"
       }
     }
   ],

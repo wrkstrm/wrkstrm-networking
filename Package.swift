@@ -11,7 +11,7 @@ Package.Inject.local.dependencies = [
 ]
 
 Package.Inject.remote.dependencies = [
-  .package(url: "https://github.com/wrkstrm/WrkstrmFoundation.git", from: "2.0.0"),
+  .package(url: "https://github.com/wrkstrm/WrkstrmFoundation.git", from: "3.0.0"),
   .package(url: "https://github.com/wrkstrm/WrkstrmLog.git", from: "2.0.0"),
   .package(url: "https://github.com/wrkstrm/WrkstrmMain.git", from: "2.4.0"),
 ]
@@ -29,7 +29,7 @@ let package = Package(
     .watchOS(.v9),
   ],
   products: [
-    .library(name: "WrkstrmNetworking", targets: ["WrkstrmNetworking"]),
+    .library(name: "WrkstrmNetworking", targets: ["WrkstrmNetworking"])
   ],
   dependencies: Package.Inject.shared.dependencies + [
     .package(url: "https://github.com/apple/swift-docc-plugin", from: "1.4.0")

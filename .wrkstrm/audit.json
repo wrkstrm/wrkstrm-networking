@@ -1,0 +1,6 @@
+{
+  "disable": [
+    "library-cli",
+    "platforms-min"
+  ]
+}
