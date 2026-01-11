@@ -54,7 +54,7 @@ let client = HTTP.JSONClient(
 )
 ```
 
-## Injecting A Custom Backend
+## Injecting a Custom Backend
 
 Implement `HTTP.Transport` and pass it to a client initializer.
 

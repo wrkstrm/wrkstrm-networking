@@ -71,7 +71,7 @@ you just pass strings and let Foundation serialize correctly.
 
 ---
 
-## Step 2: Encode A `Application/X-www-form-urlencoded` Body
+## Step 2: Encode a `Application/X-www-form-urlencoded` Body
 
 Many APIs expect form bodies for POST/PUT. You can reuse `URLComponents` to generate the exact same
 `key=value&key2=value2` wire format. WrkstrmNetworking's `HTTP.Request.Encodable` helpers handle
@@ -222,7 +222,7 @@ struct AnyEncodable: Encodable {
 
 ---
 
-## Step 5: Verify with A CURL Mirror
+## Step 5: Verify with a CURL Mirror
 
 Being able to reproduce a request as a cURL command is the best debugging tool you aren’t using
 enough.
@@ -260,7 +260,7 @@ terminal to confirm exactly what the server receives.
 
 ---
 
-## Worked Example: Add A Symbol to A Watchlist (Form Body)
+## Worked Example: Add a Symbol to a Watchlist (Form Body)
 
 ```swift
 struct AddSymbolsRequest {

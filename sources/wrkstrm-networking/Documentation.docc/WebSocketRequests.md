@@ -9,7 +9,7 @@ requests via `HTTP.Request.Routable` (path + options). Use
 `HTTP.Request.WebSocket` to declare typed WebSocket routes and
 `HTTP.WebSocketExecutor` to connect and consume JSON frames.
 
-## Define A Route
+## Define a Route
 
 ```swift
 import WrkstrmNetworking
