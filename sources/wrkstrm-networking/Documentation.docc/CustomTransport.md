@@ -38,7 +38,7 @@ let client = HTTP.CodableClient(
 Both clients default to `HTTP.URLSessionTransport`. `CodableClient.session` and `JSONClient.session`
 expose the underlying `URLSession` when URLSession is the transport.
 
-### Customizing URLSession (e.g., URLProtocol)
+### Customizing URLSession (E.g., URLProtocol)
 
 ```
 var config = URLSessionConfiguration.ephemeral
@@ -54,7 +54,7 @@ let client = HTTP.JSONClient(
 )
 ```
 
-## Injecting a Custom Backend
+## Injecting A Custom Backend
 
 Implement `HTTP.Transport` and pass it to a client initializer.
 

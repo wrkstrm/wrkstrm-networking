@@ -46,7 +46,7 @@ try await socket.ping()
 await socket.close(code: .normalClosure, reason: nil)
 ```
 
-### Build ws/wss URLs from your Environment
+### Build Ws/wss URLs From Your Environment
 
 ```
 let wsURL = try HTTP.WSURLBuilder.url(
@@ -62,6 +62,6 @@ let wsURL = try HTTP.WSURLBuilder.url(
 - Lifecycle: `receive()` completes when the task errors or is closed.
 - Backpressure: the stream yields one frame at a time; apply your own buffering if needed.
 
-## See also
+## See Also
 
 - Typed routes and executors: [WebSocket Requests](WebSocketRequests.md)

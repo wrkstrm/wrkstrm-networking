@@ -1,4 +1,4 @@
-# Query Parameters (typed helpers)
+# Query Parameters (Typed Helpers)
 
 Building HTTP query strings consistently is deceptively hard. Raw
 `URLQueryItem` values are `Optional<String>` and push formatting decisions to

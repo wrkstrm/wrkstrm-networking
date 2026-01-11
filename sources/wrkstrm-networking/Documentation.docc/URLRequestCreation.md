@@ -1,4 +1,4 @@
-# Form URL Encoding in Swift
+# Form URL Encoding In Swift
 
 Learn how to build query strings and `application/x-www-form-urlencoded` request bodies in Swift
 without hand-rolling percent-encoding.
@@ -24,7 +24,7 @@ predictably, and testably — no manual `%` escapes required. }
 
 ---
 
-## Step 1: Build query parameters with `URLComponents`
+## Step 1: Build Query Parameters With `URLComponents`
 
 Use `URLComponents` and `URLQueryItem` to attach query parameters. Do **not** concatenate strings.
 
@@ -61,7 +61,7 @@ let url = makeURL(
 // => https://api.example.com/v1/search?lang=en-US&limit=25&q=spicy%20tacos%20%26%20salsa
 ```
 
-### Why this works
+### Why This Works
 
 `URLQueryItem` handles percent-encoding for you. You don’t escape ampersands, spaces, or unicode;
 you just pass strings and let Foundation serialize correctly.
@@ -71,7 +71,7 @@ you just pass strings and let Foundation serialize correctly.
 
 ---
 
-## Step 2: Encode a `application/x-www-form-urlencoded` body
+## Step 2: Encode A `Application/x-www-form-urlencoded` Body
 
 Many APIs expect form bodies for POST/PUT. You can reuse `URLComponents` to generate the exact same
 `key=value&key2=value2` wire format. WrkstrmNetworking's `HTTP.Request.Encodable` helpers handle
@@ -104,14 +104,14 @@ let postURL = URL(string: "https://api.example.com/v1/watchlists/indexes/symbols
 let req = makeFormRequest(url: postURL, params: ["symbols": "AAPL,IBM,NFLX"])
 ```
 
-### Why reuse `URLComponents`?
+### Why Reuse `URLComponents`?
 
 It guarantees identical percent-encoding rules for both query strings and form bodies, preventing
 subtle mismatches like double-encoding `%25` or leaving a `+` unescaped.
 
 ---
 
-## Step 3: Support arrays and optionals cleanly
+## Step 3: Support Arrays And Optionals Cleanly
 
 APIs commonly accept comma-delimited arrays or repeated keys. Handle both patterns without manual
 escaping.
@@ -152,7 +152,7 @@ You can feed these items into either a URL’s `queryItems` or a form body via `
 
 ---
 
-## Step 4: Build `URLRequest` the right way (content-type aware)
+## Step 4: Build `URLRequest` The Right Way (Content-type Aware)
 
 Switch encoding strategy based on `Content-Type`, and never encode twice.
 
@@ -222,7 +222,7 @@ struct AnyEncodable: Encodable {
 
 ---
 
-## Step 5: Verify with a cURL mirror
+## Step 5: Verify With A CURL Mirror
 
 Being able to reproduce a request as a cURL command is the best debugging tool you aren’t using
 enough.
@@ -240,13 +240,13 @@ terminal to confirm exactly what the server receives.
 
 ---
 
-## Common pitfalls and how to avoid them
+## Common Pitfalls And How To Avoid Them
 
 - **Manual percent-encoding:** Don’t. Let `URLQueryItem` do its job.
 
 ---
 
-## See also
+## See Also
 
 - Custom backends and URLSession defaults: [Custom Transports](CustomTransport.md)
 - **Double-encoding:** If you see `%2520` in logs, you encoded twice. Encode once at the very end.
@@ -260,7 +260,7 @@ terminal to confirm exactly what the server receives.
 
 ---
 
-## Worked example: Add a symbol to a watchlist (form body)
+## Worked Example: Add A Symbol To A Watchlist (Form Body)
 
 ```swift
 struct AddSymbolsRequest {

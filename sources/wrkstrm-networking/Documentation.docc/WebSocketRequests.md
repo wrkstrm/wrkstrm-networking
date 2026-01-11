@@ -9,7 +9,7 @@ requests via `HTTP.Request.Routable` (path + options). Use
 `HTTP.Request.WebSocket` to declare typed WebSocket routes and
 `HTTP.WebSocketExecutor` to connect and consume JSON frames.
 
-## Define a Route
+## Define A Route
 
 ```swift
 import WrkstrmNetworking
@@ -39,7 +39,7 @@ struct TickerStream: HTTP.Request.WebSocket {
 `HTTP.Request.WebSocket` inherits `Routable`, so routes share the same
 `path` and `options` structure (timeout, headers, queryItems) as HTTP.
 
-## Connect and Consume
+## Connect And Consume
 
 ````swift
 let env: any HTTP.Environment = …
@@ -77,7 +77,7 @@ if let s = String(data: data, encoding: .utf8) {
 await socket.close(code: .normalClosure, reason: nil)
 ```swift
 
-## URL Building (ws/wss)
+## URL Building (Ws/wss)
 
 If you need a URL directly:
 
