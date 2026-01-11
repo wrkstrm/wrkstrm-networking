@@ -59,7 +59,7 @@ let urlRequest = try MyRequest().asURLRequest(
 - The former `json` Foundation tuple property has been removed; instead, tuple-based initializers transparently bridge into `jsonCoding`.
 - No behavior changes unless you opt into protocol-based coders.
 
-## Behavior And Content-Type
+## Behavior and Content-Type
 
 - For `Content-Type: application/json`, body encoding uses the provided `JSONDataEncoding` implementation; other content types (form-encoded, raw `Data`, `String`) are unchanged.
 - Response decoding uses the provided `JSONDataDecoding` for typed `Decodable` bodies.

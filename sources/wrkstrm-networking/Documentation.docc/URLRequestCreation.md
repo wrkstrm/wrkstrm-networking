@@ -1,4 +1,4 @@
-# Form URL Encoding In Swift
+# Form URL Encoding in Swift
 
 Learn how to build query strings and `application/x-www-form-urlencoded` request bodies in Swift
 without hand-rolling percent-encoding.
@@ -24,7 +24,7 @@ predictably, and testably — no manual `%` escapes required. }
 
 ---
 
-## Step 1: Build Query Parameters With `URLComponents`
+## Step 1: Build Query Parameters with `URLComponents`
 
 Use `URLComponents` and `URLQueryItem` to attach query parameters. Do **not** concatenate strings.
 
@@ -71,7 +71,7 @@ you just pass strings and let Foundation serialize correctly.
 
 ---
 
-## Step 2: Encode A `Application/x-www-form-urlencoded` Body
+## Step 2: Encode A `Application/X-www-form-urlencoded` Body
 
 Many APIs expect form bodies for POST/PUT. You can reuse `URLComponents` to generate the exact same
 `key=value&key2=value2` wire format. WrkstrmNetworking's `HTTP.Request.Encodable` helpers handle
@@ -111,7 +111,7 @@ subtle mismatches like double-encoding `%25` or leaving a `+` unescaped.
 
 ---
 
-## Step 3: Support Arrays And Optionals Cleanly
+## Step 3: Support Arrays and Optionals Cleanly
 
 APIs commonly accept comma-delimited arrays or repeated keys. Handle both patterns without manual
 escaping.
@@ -152,7 +152,7 @@ You can feed these items into either a URL’s `queryItems` or a form body via `
 
 ---
 
-## Step 4: Build `URLRequest` The Right Way (Content-type Aware)
+## Step 4: Build `URLRequest` the Right Way (Content-type Aware)
 
 Switch encoding strategy based on `Content-Type`, and never encode twice.
 
@@ -222,7 +222,7 @@ struct AnyEncodable: Encodable {
 
 ---
 
-## Step 5: Verify With A CURL Mirror
+## Step 5: Verify with A CURL Mirror
 
 Being able to reproduce a request as a cURL command is the best debugging tool you aren’t using
 enough.
@@ -240,7 +240,7 @@ terminal to confirm exactly what the server receives.
 
 ---
 
-## Common Pitfalls And How To Avoid Them
+## Common Pitfalls and How to Avoid Them
 
 - **Manual percent-encoding:** Don’t. Let `URLQueryItem` do its job.
 
@@ -260,7 +260,7 @@ terminal to confirm exactly what the server receives.
 
 ---
 
-## Worked Example: Add A Symbol To A Watchlist (Form Body)
+## Worked Example: Add A Symbol to A Watchlist (Form Body)
 
 ```swift
 struct AddSymbolsRequest {

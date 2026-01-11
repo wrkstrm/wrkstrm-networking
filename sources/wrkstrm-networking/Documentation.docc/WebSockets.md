@@ -46,7 +46,7 @@ try await socket.ping()
 await socket.close(code: .normalClosure, reason: nil)
 ```
 
-### Build Ws/wss URLs From Your Environment
+### Build Ws/Wss URLs From Your Environment
 
 ```
 let wsURL = try HTTP.WSURLBuilder.url(

@@ -36,7 +36,7 @@ options = .make(headers: ["Content-Type": "application/x-www-form-urlencoded"]) 
 The `.make` convenience creates `HTTP.Request.Options` from a builder closure,
 leaving header and timeout handling unchanged.
 
-## Do / Don’t
+## Do Don’t
 
 - Do use `q.add(_, value:)` overloads for native types and enums.
 - Do use `q.addJoined(_, values:)` for lists that must be comma‑separated.
