@@ -1,6 +1,6 @@
 import Foundation
 import Logging
-import WrkstrmLog
+import CommonLog
 
 extension Log {
   /// The argument required to enable additional logging.

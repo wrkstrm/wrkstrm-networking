@@ -1,6 +1,6 @@
 import Foundation
 import WrkstrmFoundation
-import WrkstrmLog
+import CommonLog
 import WrkstrmMain
 
 extension Data {

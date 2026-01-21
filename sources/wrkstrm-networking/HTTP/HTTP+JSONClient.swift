@@ -1,6 +1,6 @@
 import Foundation
 import WrkstrmFoundation
-import WrkstrmLog
+import CommonLog
 import WrkstrmMain
 
 #if canImport(FoundationNetworking)

@@ -1,6 +1,6 @@
 import Foundation
 import Testing
-import WrkstrmLog
+import CommonLog
 
 @testable import WrkstrmFoundation
 @testable import WrkstrmMain
