@@ -1,60 +1,60 @@
 {
-  "originHash" : "61a07d50965aee9a8166cec75c82fa25a964f5b07c01c65d81db8661c7d3ff96",
-  "pins" : [
+  "originHash": "61a07d50965aee9a8166cec75c82fa25a964f5b07c01c65d81db8661c7d3ff96",
+  "pins": [
     {
-      "identity" : "swift-docc-plugin",
-      "kind" : "remoteSourceControl",
-      "location" : "https://github.com/apple/swift-docc-plugin",
-      "state" : {
-        "revision" : "3e4f133a77e644a5812911a0513aeb7288b07d06",
-        "version" : "1.4.5"
+      "identity": "swift-docc-plugin",
+      "kind": "remoteSourceControl",
+      "location": "https://github.com/apple/swift-docc-plugin",
+      "state": {
+        "revision": "3e4f133a77e644a5812911a0513aeb7288b07d06",
+        "version": "1.4.5"
       }
     },
     {
-      "identity" : "swift-docc-symbolkit",
-      "kind" : "remoteSourceControl",
-      "location" : "https://github.com/swiftlang/swift-docc-symbolkit",
-      "state" : {
-        "revision" : "b45d1f2ed151d057b54504d653e0da5552844e34",
-        "version" : "1.0.0"
+      "identity": "swift-docc-symbolkit",
+      "kind": "remoteSourceControl",
+      "location": "https://github.com/swiftlang/swift-docc-symbolkit",
+      "state": {
+        "revision": "b45d1f2ed151d057b54504d653e0da5552844e34",
+        "version": "1.0.0"
       }
     },
     {
-      "identity" : "swift-log",
-      "kind" : "remoteSourceControl",
-      "location" : "https://github.com/apple/swift-log.git",
-      "state" : {
-        "revision" : "bc386b95f2a16ccd0150a8235e7c69eab2b866ca",
-        "version" : "1.8.0"
+      "identity": "swift-log",
+      "kind": "remoteSourceControl",
+      "location": "https://github.com/apple/swift-log.git",
+      "state": {
+        "revision": "bc386b95f2a16ccd0150a8235e7c69eab2b866ca",
+        "version": "1.8.0"
       }
     },
     {
-      "identity" : "wrkstrmfoundation",
-      "kind" : "remoteSourceControl",
-      "location" : "https://github.com/wrkstrm/WrkstrmFoundation.git",
-      "state" : {
-        "revision" : "05f61caa75f352104054a9a0b6fae798c4034a7e",
-        "version" : "3.0.0"
+      "identity": "wrkstrmfoundation",
+      "kind": "remoteSourceControl",
+      "location": "https://github.com/wrkstrm/WrkstrmFoundation.git",
+      "state": {
+        "revision": "05f61caa75f352104054a9a0b6fae798c4034a7e",
+        "version": "3.0.0"
       }
     },
     {
-      "identity" : "commonlog",
-      "kind" : "remoteSourceControl",
-      "location" : "https://github.com/wrkstrm/common-log.git",
-      "state" : {
-        "revision" : "f03a3f99c477e3c5c62d96f2833c2ac171390c59",
-        "version" : "2.2.4"
+      "identity": "commonlog",
+      "kind": "remoteSourceControl",
+      "location": "https://github.com/wrkstrm/common-log.git",
+      "state": {
+        "revision": "12d4a33af2070e5282aab14d84a48a2baa168d0a",
+        "version": "3.0.0"
       }
     },
     {
-      "identity" : "wrkstrmmain",
-      "kind" : "remoteSourceControl",
-      "location" : "https://github.com/wrkstrm/WrkstrmMain.git",
-      "state" : {
-        "revision" : "c2e57bd3f0f5e4ce720d5a92a0126e9b1d6750e1",
-        "version" : "2.5.0"
+      "identity": "wrkstrmmain",
+      "kind": "remoteSourceControl",
+      "location": "https://github.com/wrkstrm/WrkstrmMain.git",
+      "state": {
+        "revision": "c2e57bd3f0f5e4ce720d5a92a0126e9b1d6750e1",
+        "version": "2.5.0"
       }
     }
   ],
-  "version" : 3
+  "version": 3
 }

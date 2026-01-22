@@ -7,7 +7,7 @@ network stack stays consistent across services.
 ## Installation
 
 ```swift
-.package(url: "https://github.com/wrkstrm/WrkstrmNetworking.git", from: "1.0.0"),
+.package(url: "https://github.com/wrkstrm/wrkstrm-networking.git", from: "3.0.0"),
 ```
 
 ## Usage
@@ -23,4 +23,3 @@ import WrkstrmNetworking
 DocC lives at:
 
 - `sources/wrkstrm-networking/Documentation.docc`
-
