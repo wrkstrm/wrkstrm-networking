@@ -5,7 +5,7 @@ import PackageDescription
 // MARK: - Configuration Service
 
 Package.Inject.local.dependencies = [
-  .package(name: "WrkstrmFoundation", path: "../../../WrkstrmFoundation"),
+  .package(name: "wrkstrm-foundation", path: "../wrkstrm-foundation"),
   .package(name: "common-log", path: "../../../common/domain/system/common-log"),
   .package(name: "WrkstrmMain", path: "../../../WrkstrmMain"),
 ]
