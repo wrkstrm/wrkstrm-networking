@@ -7,13 +7,13 @@ import PackageDescription
 Package.Inject.local.dependencies = [
   .package(name: "wrkstrm-foundation", path: "../wrkstrm-foundation"),
   .package(name: "common-log", path: "../../../common/domain/system/common-log"),
-  .package(name: "WrkstrmMain", path: "../../../WrkstrmMain"),
+  .package(name: "wrkstrm-main", path: "../wrkstrm-main"),
 ]
 
 Package.Inject.remote.dependencies = [
-  .package(url: "https://github.com/wrkstrm/WrkstrmFoundation.git", from: "4.0.0"),
-  .package(url: "https://github.com/wrkstrm/common-log.git", from: "4.0.0"),
-  .package(url: "https://github.com/wrkstrm/WrkstrmMain.git", from: "2.4.0"),
+  .package(url: "https://github.com/wrkstrm/wrkstrm-foundation.git", from: "3.0.0"),
+  .package(url: "https://github.com/wrkstrm/common-log.git", from: "3.0.0"),
+  .package(url: "https://github.com/wrkstrm/WrkstrmMain.git", from: "3.0.0"),
 ]
 
 // MARK: - Package Declaration
@@ -38,9 +38,9 @@ let package = Package(
     .target(
       name: "WrkstrmNetworking",
       dependencies: [
-        .product(name: "WrkstrmFoundation", package: "WrkstrmFoundation"),
+        .product(name: "WrkstrmFoundation", package: "wrkstrm-foundation"),
         .product(name: "CommonLog", package: "common-log"),
-        .product(name: "WrkstrmMain", package: "WrkstrmMain")
+        .product(name: "WrkstrmMain", package: "wrkstrm-main")
       ],
       path: "sources/wrkstrm-networking",
       swiftSettings: Package.Inject.shared.swiftSettings,
