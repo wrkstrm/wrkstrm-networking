@@ -2,21 +2,19 @@
 import Foundation
 import PackageDescription
 
-// MARK: - Configuration Service
+let useLocalDeps: Bool = {
+  guard let raw = ProcessInfo.processInfo.environment["SPM_USE_LOCAL_DEPS"] else { return false }
+  let v = raw.trimmingCharacters(in: .whitespacesAndNewlines).lowercased()
+  return v == "1" || v == "true" || v == "yes"
+}()
 
-Package.Inject.local.dependencies = [
-  .package(name: "wrkstrm-foundation", path: "../wrkstrm-foundation"),
-  .package(name: "common-log", path: "../../../common/domain/system/common-log"),
-  .package(name: "wrkstrm-main", path: "../wrkstrm-main"),
-]
+func localOrRemote(name: String, path: String, url: String, from version: Version) -> Package.Dependency {
+  if useLocalDeps { return .package(name: name, path: path) }
+  return .package(url: url, from: version)
+}
 
-Package.Inject.remote.dependencies = [
-  .package(url: "https://github.com/wrkstrm/wrkstrm-foundation.git", from: "3.0.0"),
-  .package(url: "https://github.com/wrkstrm/common-log.git", from: "3.0.0"),
-  .package(url: "https://github.com/wrkstrm/wrkstrm-main.git", from: "3.0.0"),
-]
-
-// MARK: - Package Declaration
+let sharedSwiftSettings: [SwiftSetting] =
+  useLocalDeps ? [.unsafeFlags(["-Xfrontend", "-warn-long-expression-type-checking=10"])] : []
 
 let package = Package(
   name: "WrkstrmNetworking",
@@ -31,7 +29,22 @@ let package = Package(
   products: [
     .library(name: "WrkstrmNetworking", targets: ["WrkstrmNetworking"])
   ],
-  dependencies: Package.Inject.shared.dependencies + [
+  dependencies: [
+    localOrRemote(
+      name: "wrkstrm-foundation",
+      path: "../wrkstrm-foundation",
+      url: "https://github.com/wrkstrm/wrkstrm-foundation.git",
+      from: "3.0.0"),
+    localOrRemote(
+      name: "common-log",
+      path: "../../../common/domain/system/common-log",
+      url: "https://github.com/wrkstrm/common-log.git",
+      from: "3.0.0"),
+    localOrRemote(
+      name: "wrkstrm-main",
+      path: "../wrkstrm-main",
+      url: "https://github.com/wrkstrm/wrkstrm-main.git",
+      from: "3.0.0"),
     .package(url: "https://github.com/apple/swift-docc-plugin", from: "1.4.0")
   ],
   targets: [
@@ -43,54 +56,13 @@ let package = Package(
         .product(name: "WrkstrmMain", package: "wrkstrm-main")
       ],
       path: "sources/wrkstrm-networking",
-      swiftSettings: Package.Inject.shared.swiftSettings,
+      swiftSettings: sharedSwiftSettings,
     ),
     .testTarget(
       name: "WrkstrmNetworkingTests",
       dependencies: ["WrkstrmNetworking"],
       path: "tests/wrkstrm-networking-tests",
-      swiftSettings: Package.Inject.shared.swiftSettings,
+      swiftSettings: sharedSwiftSettings,
     ),
   ]
 )
-
-// MARK: - Package Service
-
-print("---- Package Inject Deps: Begin ----")
-print("Use Local Deps? \(ProcessInfo.useLocalDeps)")
-print(Package.Inject.shared.dependencies.map(\.kind))
-print("---- Package Inject Deps: End ----")
-
-extension Package {
-  @MainActor
-  public struct Inject {
-    public static let version = "1.0.0"
-
-    public var swiftSettings: [SwiftSetting] = []
-    var dependencies: [PackageDescription.Package.Dependency] = []
-
-    public static let shared: Inject = ProcessInfo.useLocalDeps ? .local : .remote
-
-    static var local: Inject = .init(swiftSettings: [.local])
-    static var remote: Inject = .init()
-  }
-}
-
-// MARK: - PackageDescription extensions
-
-extension SwiftSetting {
-  public static let local: SwiftSetting = .unsafeFlags([
-    "-Xfrontend",
-    "-warn-long-expression-type-checking=10",
-  ])
-}
-
-// MARK: - Foundation extensions
-
-extension ProcessInfo {
-  public static var useLocalDeps: Bool {
-    ProcessInfo.processInfo.environment["SPM_USE_LOCAL_DEPS"] == "true"
-  }
-}
-
-// PACKAGE_SERVICE_END_V1
